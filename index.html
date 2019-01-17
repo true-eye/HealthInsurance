@@ -59,7 +59,7 @@
                                     <option>OBAMACARE</option>
                                     <option>MEDICAL SUPPLEMENT</option>
                                 </select>
-                                <div class="select_arrow">
+                                <div class="select_arrow right_20">
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,18 @@
                     <div class="dialog-content">
                         <div class="form-group">
                             <div class="label-dialog-content">GENDER</div>
-                            
+                            <div class="control-group">
+                                <label class="control control-radio">
+                                    Male
+                                        <input type="radio" name="radio-male" id="radio-male" checked="checked" />
+                                    <div class="control_indicator"></div>
+                                </label>
+                                <label class="control control-radio">
+                                    Female
+                                        <input type="radio" name="radio-female" id="radio-female" />
+                                    <div class="control_indicator"></div>
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">DATE OF BIRTH</div>
@@ -85,7 +96,7 @@
                                     <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
                                     <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
                                 </select>
-                                <div class="select_arrow">
+                                <div class="select_arrow right_20">
                                 </div>
                             </div>
                             <div class="select" style="width: 20%;">
@@ -94,16 +105,16 @@
                                     <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
                                     <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
                                 </select>
-                                <div class="select_arrow">
+                                <div class="select_arrow right_20">
                                 </div>
                             </div>
                             <div class="select" style="width: 30%;">
                                 <select>
-                                    <option>DAY</option>
+                                    <option>YEAR</option>
                                     <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
                                     <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
                                 </select>
-                                <div class="select_arrow">
+                                <div class="select_arrow right_20">
                                 </div>
                             </div>
                         </div>
@@ -118,14 +129,58 @@
                     </div>
                     <div class="dialog-content">
                         <div class="form-group">
-                            <div class="label-dialog-content">HEIGHT</div>
-                            
+                            <div class="label-dialog-content">Height</div>
+                            <div class="select" style="width: 30%; margin: 0px 20px;">
+                                <select>
+                                    <option>FEET</option>
+                                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+                                    <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                                </select>
+                                <div class="select_arrow right_20">
+                                </div>
+                            </div>
+                            <div class="select" style="width: 30%;">
+                                <select>
+                                    <option>INCHES</option>
+                                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+                                    <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                                </select>
+                                <div class="select_arrow right_20">
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <div class="label-dialog-content">WEIGHT</div>
-                            <select class="selectpicker">
-                                <option class="option-look">MONTH</option>
-                            </select>
+                            <div class="label-dialog-content">Weight</div>
+
+                            <div class="select" style="width: 60%;">
+                                <select>
+                                    <option>LBS</option>
+                                </select>
+                                <div class="select_arrow right_5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="label-dialog-content">How many people in your household?</div>
+
+                            <div class="select" style="width: 60%;">
+                                <select>
+                                    <option>NUMBER OF PEOPLE</option>
+                                </select>
+                                <div class="select_arrow right_5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="label-dialog-content">Expected Annual income</div>
+
+                            <div class="select" style="width: 60%;">
+                                <select>
+                                    <option>SELECT YOUR YEARLY INCOME</option>
+                                </select>
+                                <div class="select_arrow right_5">
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-get-started" id="btn-page-3">CONTINUE</button>
@@ -139,12 +194,34 @@
                     <div class="dialog-content">
                         <div class="form-group">
                             <div class="label-dialog-content">First Name</div>
+                            <input class="text-dialog-content" type="text" name="first_name" id="first_name"/>
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">Last Name</div>
+                            <input class="text-dialog-content" type="text" name="last_name" id="last_name"/>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-get-started" id="btn-page-4">CONTINUE</button>
+                            <div class="label-dialog-content">Email</div>
+                            <input class="text-dialog-content" type="text" name="email" id="email"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="label-dialog-content">Address</div>
+                            <input class="text-dialog-content" type="text" name="address" id="address"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="label-dialog-content">City</div>
+                            <input class="text-dialog-content" type="text" name="city" id="city"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="label-dialog-content">State</div>
+                            <input class="text-dialog-content" type="text" name="state" id="state"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="label-dialog-content">Phone</div>
+                            <input class="text-dialog-content" type="text" name="phone" id="phone"/>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-get-question" id="btn-page-4">GET QUOTES NOW</button>
                         </div>
                     </div>
                 </div>

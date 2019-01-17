@@ -214,6 +214,87 @@ body {
     text-align-last: center;
     z-index: 6;
 }
+.control {
+    font-family: "Roboto";
+    color: rgb(60, 60, 60);
+    position: relative;
+    padding-left: 48px;
+    margin: 10px 30px 10px 50px;
+    padding-top: 0px;
+    cursor: pointer;
+    font-size: 25px;
+}
+    .control input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+.control_indicator {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 29px;
+    width: 29px;
+    background: #ffffff;
+    border: 3px solid #000000;
+}
+.control-radio .control_indicator {
+    border-radius: 50%;
+}
+
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+    background: transparent;
+}
+
+.control input:checked ~ .control_indicator {
+    background: #ffffff;
+    border: 3px solid #000000;
+}
+.control input:checked:focus ~ .control_indicator {
+    background: #ffffff;
+    border: 3px solid #0182c6;
+}
+
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+    background: transparent;
+}
+
+.control_indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control input:checked ~ .control_indicator:after {
+    display: block;
+}
+.control-radio input:checked ~ .control_indicator:after {
+    left: 2px;
+    top: 2px;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+.control-radio input:checked:focus ~ .control_indicator:after {
+    left: 2px;
+    top: 2px;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    background: #000000;
+}
+.control-radio .control_indicator:after {
+    left: 2px;
+    top: 2px;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    background: #ff0000;
+}
+
 
 .select {
     position: relative;
@@ -253,11 +334,16 @@ body {
 .select_arrow {
     position: absolute;
     top: 35px;
-    right: 20%;
     pointer-events: none;
     border-style: solid;
     border-width: 16px 10px 0px 10px;
     border-color: #7b7b7b transparent transparent transparent;
+}
+.right_20 {
+    right: 20%;
+}
+.right_5 {
+    right: 5%;
 }
 .select select:hover ~ .select_arrow,
 .select select:focus ~ .select_arrow {
@@ -266,7 +352,6 @@ body {
 .select select:disabled ~ .select_arrow {
     border-top-color: #cccccc;
 }
-
 .btn-get-started {
     border-width: 1px;
     border-color: rgb(52, 173, 237);
@@ -287,7 +372,30 @@ body {
     text-align: center;
     margin-top: 27px;
     z-index: 6;
-}  
+} 
+
+.btn-get-question {
+    border-width: 1px;
+    border-color: rgb(52, 173, 237);
+    border-style: solid;
+    background-image: -moz-linear-gradient( 90deg, rgb(80,162,224) 0%, rgb(108,187,238) 59%, rgb(136,211,251) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(80,162,224) 0%, rgb(108,187,238) 59%, rgb(136,211,251) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(80,162,224) 0%, rgb(108,187,238) 59%, rgb(136,211,251) 100%);
+    box-shadow: 0px 3px 4.85px 0.15px rgba(104, 106, 107, 0.45);
+    width: 326px;
+    height: 58px;
+    z-index: 111;
+
+    font-size: 30px;
+    font-family: "Roboto";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 27px;
+    z-index: 6;
+}
+  
 
 
 .red-bar {
@@ -488,13 +596,13 @@ body {
     .dialog-header {
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
-    } 
+    }      
     
     .text-checks {
         font-size: 18px;
     }
 
-    .select_arrow {
+    .right_20 {
         right: 10%;
     }
 
