@@ -10,8 +10,6 @@
   <title>THE HEALTH SCOUT</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
-
   <link rel="stylesheet" href="assets/style/css/style.css">
   
 </head>
@@ -32,40 +30,142 @@
 
     <div class="red-bar"></div>
     
-    <div class="img-background">
-        <div class="hero-text">
-            <div class="dialog-back">
-                <div class="dialog-header">
-                    Let us find the<br/>
-                    Afforable Health Plan<br/>
-                    that's right for you!<br/>
-                </div>
-                <div class="dialog-checks">
-                    <div class="text-checks">Lower rates</div>
-                    <div class="text-checks">More plan options</div>
-                    <div class="text-checks">Help if you need it</div>
-                </div>
-                <form class="dialog-content" method="post" action="">
-                    <div class="form-group">
-                        <div class="label-dialog-content">ENTER YOUR ZIP TO START</div>
-                        <input class="text-dialog-content" type="text" name="zip" id="zip"/>
-                    </div>
-                    <div class="form-group">
-                        <div class="label-dialog-content">I'M LOOKING FOR...</div>
-                        <select class="selectpicker">
-                            <option class="option-look">HEALTH INSURANCE</option>
-                            <option class="option-look">MEDICAL SUPPLEMENT</option>
-                            <option class="option-look">OBAMACARE</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-get-started">GET STARTED</button>
-                    </div>
-                </form>
+    <div class="hero-text">
+        <div class="img-background"></div>
+        <div class="dialog-back">
+            <div class="dialog-header">
+                Let us find the<br/>
+                Afforable Health Plan<br/>
+                that's right for you!<br/>
             </div>
+            <form method="POST" action="">
+                <div id="page-1">
+                    <div class="dialog-checks">
+                        <div class="text-checks">Lower rates</div>
+                        <div class="text-checks">More plan options</div>
+                        <div class="text-checks">Help if you need it</div>
+                    </div>
+                    <div class="dialog-content">
+                        <div class="form-group">
+                            <div class="label-dialog-content">ENTER YOUR ZIP TO START</div>
+                            <input class="text-dialog-content" type="text" name="zip" id="zip"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="label-dialog-content">I'M LOOKING FOR...</div>
+
+                            <div class="select" style="width: 60%;">
+                                <select>
+                                    <option>HEALTH INSUARNCE</option>
+                                    <option>OBAMACARE</option>
+                                    <option>MEDICAL SUPPLEMENT</option>
+                                </select>
+                                <div class="select_arrow">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-get-started" id="btn-get-started">GET STARTED</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="page-2">
+                    <div class="dialog-checks">
+                        <div class="text-step">Step 1 of 3</div>
+                    </div>
+                    <div class="dialog-content">
+                        <div class="form-group">
+                            <div class="label-dialog-content">GENDER</div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <div class="label-dialog-content">DATE OF BIRTH</div>
+                            <div class="select" style="width: 30%;">
+                                <select>
+                                    <option>MONTH</option>
+                                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+                                    <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                                </select>
+                                <div class="select_arrow">
+                                </div>
+                            </div>
+                            <div class="select" style="width: 20%;">
+                                <select>
+                                    <option>DAY</option>
+                                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+                                    <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                                </select>
+                                <div class="select_arrow">
+                                </div>
+                            </div>
+                            <div class="select" style="width: 30%;">
+                                <select>
+                                    <option>DAY</option>
+                                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+                                    <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                                </select>
+                                <div class="select_arrow">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-get-started" id="btn-page-2">CONTINUE</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="page-3">
+                    <div class="dialog-checks">
+                        <div class="text-step">Step 2 of 3</div>
+                    </div>
+                    <div class="dialog-content">
+                        <div class="form-group">
+                            <div class="label-dialog-content">HEIGHT</div>
+                            
+                        </div>
+                        <div class="form-group">
+                            <div class="label-dialog-content">WEIGHT</div>
+                            <select class="selectpicker">
+                                <option class="option-look">MONTH</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-get-started" id="btn-page-3">CONTINUE</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="page-4">
+                    <div class="dialog-checks">
+                        <div class="text-step">Step 3 of 3</div>
+                    </div>
+                    <div class="dialog-content">
+                        <div class="form-group">
+                            <div class="label-dialog-content">First Name</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="label-dialog-content">Last Name</div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-get-started" id="btn-page-4">CONTINUE</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="page-5">
+                    <div class="dialog-checks">
+                        <div class="text-step">Here is some more text explaining next steps...</div>
+                    </div>
+                    <div class="dialog-content">
+                        <div class="form-group">
+                            <div class="label-dialog-content">Here are few offers we thought you might be interested in</div>
+                        </div>
+                        <div class="banner"></div>
+                        <div class="banner"></div>
+                        <div class="banner"></div>
+                        <div class="banner"></div>
+                        <div class="banner"></div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-
     <div class="container-signs">
         <img class="img-sign" src="assets/images/signs/Anthem.png"  id="id-sign-anthem" alt="Anthem"/>
         <img class="img-sign" src="assets/images/signs/aetna.png"   id="id-sign-aetna" alt="aetna"/>
@@ -77,7 +177,7 @@
 
     <div class="container-gradient"></div>
 
-    <div class="">
+    <div id="div-caption">
         <div class="text-title">
             EDUCATE YOURSELF: HEALTH INSURANCE RESOURCES
         </div>
@@ -143,8 +243,8 @@
         <p class="text-footer footer-left">Copyright © 2018 HealthScout. All rights reserved</p>
     </div>
 
+    <script src="assets/script/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
 </body>
 </html>
