@@ -10,6 +10,7 @@
   <title>THE HEALTH SCOUT</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/style/css/style.css">
   
 </head>
@@ -21,11 +22,10 @@
                 <img src="assets/images/health-scout-logo-header.png" alt="Health-Scout">
             </a>
         </span>
-        <div class="header-right">
-            <img class="img-phone"/>
-            <a class="link-agent">SPEAK TO A LICENSED AGENT NOW</a>
+        <a class="header-right" href="#">
+            <div class="link-agent-phone">SPEAK TO A LICENSED AGENT NOW</div>
             <button class="button button-phone">888-123-4567</button>
-        </div>
+        </a>
     </div>
 
     <div class="red-bar"></div>
@@ -41,9 +41,9 @@
             <form method="POST" action="">
                 <div id="page-1">
                     <div class="dialog-checks">
-                        <div class="text-checks">Lower rates</div>
-                        <div class="text-checks">More plan options</div>
-                        <div class="text-checks">Help if you need it</div>
+                        <div class="text-checks"><i class="fa fa-check"></i>Lower rates</div>
+                        <div class="text-checks"><i class="fa fa-check"></i>More plan options</div>
+                        <div class="text-checks"><i class="fa fa-check"></i>Help if you need it</div>
                     </div>
                     <div class="dialog-content">
                         <div class="form-group">
@@ -214,14 +214,45 @@
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">State</div>
-                            <input class="text-dialog-content" type="text" name="state" id="state"/>
+
+                            <div class="select" style="width: 60%;">
+                                <select>
+                                    <option>USA</option>
+                                </select>
+                                <div class="select_arrow right_5">
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">Phone</div>
                             <input class="text-dialog-content" type="text" name="phone" id="phone"/>
                         </div>
+                        
+                        <div class="container-question">
+                            <p class="text-question">
+                                By clicking the "Get Quotes Now" button, I represent that I am 18+ years of age. By clicking the "Get Quotes Now" button, I give express consent by my electronic signature to receive marketing communications regarding insurance products and services from <span style="color: #0d89c9;">HealthScout.com</span>, Partner 1 LLC and their <span style="color: #0d89c9;">marketing partners</span> via automated telephone dialing system and/or pre-recorded recurring calls, text messages/picture text messages, and/or emails at the phone number and/or email provided above, including wireless numbers, if applicable, even if previously registered on the Do Not Call Registry. I understand that my telephone company may impose charges on me for these contacts. I understand that my consent is not required to buy any of these business's products or services and it can be revoked at any time. For SMS message campaigns: Text STOP to (888) 123-4567 stop and HELP for help. <span style="font-weight: bold;">Msg &amp; data or carrier rates may apply.</span> Terms & Conditions/privacy policy apply.
+                                <br></br>
+                                I understand that consent is not a condition to receive quotes and/or purchase. To receive quotes without providing consent, please call <span style="color: #0d89c9;">HealthScout.com</span> at <span style="color: #0d89c9;">888-123-4567</span> . Carrier data rates may apply.
+                            </p>
+                        </div>
                         <div class="form-group">
                             <button class="btn btn-get-question" id="btn-page-4">GET QUOTES NOW</button>
+                        </div>
+                        <div class="text-call-us-at">
+                            <span>or call us at</span>
+                            <span style="font-weight: bold; color: #0a87c8;">
+                                888-123-4567
+                            </span>
+                        </div>
+                        <div style="margin: 10px;">
+                            <img src="assets/images/signs/aarp-small.png"/>
+                            <label class="control control-checkbox" style="margin-left: 10px;">
+                                <span class="text-co-reg">
+                                    this is the co-reg offer: brief explanatory text will follow
+                                </span>
+                                <input type="checkbox" checked="checked" />
+                                <div class="control_indicator"></div>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -233,23 +264,29 @@
                         <div class="form-group">
                             <div class="label-dialog-content">Here are few offers we thought you might be interested in</div>
                         </div>
-                        <div class="banner"></div>
-                        <div class="banner"></div>
-                        <div class="banner"></div>
-                        <div class="banner"></div>
-                        <div class="banner"></div>
+                        <div class="banner"><span>728 * 90 BANNER</span></div>
+                        <div class="banner"><span>728 * 90 BANNER</span></div>
+                        <div class="banner"><span>728 * 90 BANNER</span></div>
+                        <div class="banner"><span>728 * 90 BANNER</span></div>
+                        <div class="banner"><span>728 * 90 BANNER</span></div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
     <div class="container-signs">
-        <img class="img-sign" src="assets/images/signs/Anthem.png"  id="id-sign-anthem" alt="Anthem"/>
+        <img src="assets/images/signs/Anthem.png"/>
+        <img src="assets/images/signs/aarp.png" />
+        <img src="assets/images/signs/aetna.png" />
+        <img src="assets/images/signs/cigna.png" />
+        <img src="assets/images/signs/humana.png" />
+        <img src="assets/images/signs/usaa.png" />
+        <!--<img class="img-sign" src="assets/images/signs/Anthem.png"  id="id-sign-anthem" alt="Anthem"/>
         <img class="img-sign" src="assets/images/signs/aetna.png"   id="id-sign-aetna" alt="aetna"/>
         <img class="img-sign" src="assets/images/signs/aarp.png"    id="id-sign-aarp" alt="aarp"/>
         <img class="img-sign" src="assets/images/signs/cigna.png"   id="id-sign-cigna" alt="cigna"/>
         <img class="img-sign" src="assets/images/signs/humana.png"  id="id-sign-humana" alt="humana"/>
-        <img class="img-sign" src="assets/images/signs/usaa.png"    id="id-sign-usaa" alt="usaa"/>
+        <img class="img-sign" src="assets/images/signs/usaa.png"    id="id-sign-usaa" alt="usaa"/>-->
     </div>
 
     <div class="container-gradient"></div>
