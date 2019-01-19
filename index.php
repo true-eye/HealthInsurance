@@ -1,3 +1,13 @@
+<?php
+/*
+    $db = mysqli_connect('localhost','root','rootroot','dbHealth', 8889)
+    or die('Error connecting to MySQL server.');
+  */  
+?>
+<?php
+    require('constants.php');
+    require('addUser.php');
+?>
 <!DOCTYPE html>
 <html >
 <head>
@@ -38,7 +48,7 @@
                 Afforable Health Plan<br/>
                 that's right for you!<br/>
             </div>
-            <form method="POST" action="">
+            <form method="POST" action="index.php" id="form1">
                 <div id="page-1">
                     <div class="dialog-checks">
                         <div class="text-checks"><i class="fa fa-check"></i>Lower rates</div>
@@ -48,23 +58,23 @@
                     <div class="dialog-content">
                         <div class="form-group">
                             <div class="label-dialog-content">ENTER YOUR ZIP TO START</div>
-                            <input class="text-dialog-content" type="text" name="zip" id="zip"/>
+                            <input class="text-dialog-content" type="number" min="0" max="100000" name="zip" id="zip" required/>
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">I'M LOOKING FOR...</div>
 
                             <div class="select" style="width: 60%;">
-                                <select>
-                                    <option>HEALTH INSUARNCE</option>
-                                    <option>OBAMACARE</option>
-                                    <option>MEDICAL SUPPLEMENT</option>
+                                <select name="looking-for" id="looking-for">
+                                    <option value="HEALTH INSURANCE">HEALTH INSUARNCE</option>
+                                    <option value="OBAMACARE">OBAMACARE</option>
+                                    <option value="MEDICAL SUPPLEMENT">MEDICAL SUPPLEMENT</option>
                                 </select>
                                 <div class="select_arrow right_20">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-get-started" id="btn-get-started">GET STARTED</button>
+                            <button class="btn btn-get-started" id="btn-page-1">GET STARTED</button>
                         </div>
                     </div>
                 </div>
@@ -78,12 +88,12 @@
                             <div class="control-group">
                                 <label class="control control-radio">
                                     Male
-                                        <input type="radio" name="radio-male" id="radio-male" checked="checked" />
+                                        <input type="radio" name="radio-gender" value="male" id="radio-male" checked="checked" />
                                     <div class="control_indicator"></div>
                                 </label>
                                 <label class="control control-radio">
                                     Female
-                                        <input type="radio" name="radio-female" id="radio-female" />
+                                        <input type="radio" name="radio-gender" value="female" id="radio-female" />
                                     <div class="control_indicator"></div>
                                 </label>
                             </div>
@@ -91,17 +101,19 @@
                         <div class="form-group">
                             <div class="label-dialog-content">DATE OF BIRTH</div>
                             <div class="select" style="width: 30%;">
-                                <select>
-                                    <option>MONTH</option>
-                                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
-                                    <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+                                <select name="birthdate-month" id="birthdate-month" required>
+                                    <option value="" disabled selected>MONTH</option>
+                                    <?php
+                                    for ($i = 1; $i <= 12; $i++)
+                                        echo '<option>'.$i.'</option>';
+                                    ?>
                                 </select>
                                 <div class="select_arrow right_20">
                                 </div>
                             </div>
                             <div class="select" style="width: 20%;">
-                                <select>
-                                    <option>DAY</option>
+                                <select name="birthdate-day" id="birthdate-day" required>
+                                    <option value="" disabled selected>DAY</option>
                                     <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
                                     <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
                                 </select>
@@ -109,8 +121,8 @@
                                 </div>
                             </div>
                             <div class="select" style="width: 30%;">
-                                <select>
-                                    <option>YEAR</option>
+                                <select name="birthdate-year" id="birthdate-year" required>
+                                    <option value="" disabled selected>YEAR</option>
                                     <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
                                     <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
                                 </select>
@@ -131,8 +143,8 @@
                         <div class="form-group">
                             <div class="label-dialog-content">Height</div>
                             <div class="select" style="width: 30%; margin: 0px 20px;">
-                                <select>
-                                    <option>FEET</option>
+                                <select name="height-feet" id="height-feet" required>
+                                    <option value="" disabled selected>FEET</option>
                                     <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
                                     <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
                                 </select>
@@ -140,8 +152,8 @@
                                 </div>
                             </div>
                             <div class="select" style="width: 30%;">
-                                <select>
-                                    <option>INCHES</option>
+                                <select name="height-inches" id="height-inches" required>
+                                    <option value="" disabled selected>INCHES</option>
                                     <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
                                     <option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
                                 </select>
@@ -153,8 +165,13 @@
                             <div class="label-dialog-content">Weight</div>
 
                             <div class="select" style="width: 60%;">
-                                <select>
-                                    <option>LBS</option>
+                                <select name="weight" id="weight" required>
+                                    <option value="" disabled selected>LBS</option>
+                                    <option>40</option>
+                                    <option>50</option>
+                                    <option>60</option>
+                                    <option>70</option>
+                                    <option>80</option>
                                 </select>
                                 <div class="select_arrow right_5">
                                 </div>
@@ -164,8 +181,14 @@
                             <div class="label-dialog-content">How many people in your household?</div>
 
                             <div class="select" style="width: 60%;">
-                                <select>
-                                    <option>NUMBER OF PEOPLE</option>
+                                <select name="numberPeople" id="numberPeople" required>
+                                    <option value="" disabled selected>NUMBER OF PEOPLE</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>6</option>
+                                    <option>10</option>
                                 </select>
                                 <div class="select_arrow right_5">
                                 </div>
@@ -175,8 +198,11 @@
                             <div class="label-dialog-content">Expected Annual income</div>
 
                             <div class="select" style="width: 60%;">
-                                <select>
-                                    <option>SELECT YOUR YEARLY INCOME</option>
+                                <select name="income" id="income" required>
+                                    <option value="" disabled selected>YEAR INCOME</option>
+                                    <option>1000</option>
+                                    <option>2000</option>
+                                    <option>3000</option>
                                 </select>
                                 <div class="select_arrow right_5">
                                 </div>
@@ -194,30 +220,34 @@
                     <div class="dialog-content">
                         <div class="form-group">
                             <div class="label-dialog-content">First Name</div>
-                            <input class="text-dialog-content" type="text" name="first_name" id="first_name"/>
+                            <input class="text-dialog-content" type="text" name="firstname" id="firstname" required/>
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">Last Name</div>
-                            <input class="text-dialog-content" type="text" name="last_name" id="last_name"/>
+                            <input class="text-dialog-content" type="text" name="lastname" id="lastname" required/>
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">Email</div>
-                            <input class="text-dialog-content" type="text" name="email" id="email"/>
+                            <input class="text-dialog-content" type="email" name="email" id="email" required/>
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">Address</div>
-                            <input class="text-dialog-content" type="text" name="address" id="address"/>
+                            <input class="text-dialog-content" type="text" name="address" id="address" required/>
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">City</div>
-                            <input class="text-dialog-content" type="text" name="city" id="city"/>
+                            <input class="text-dialog-content" type="text" name="city" id="city" required/>
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">State</div>
 
                             <div class="select" style="width: 60%;">
-                                <select>
-                                    <option>USA</option>
+                                <select name="state" id="state" required>
+                                    <option value="" disabled selected>USA</option>
+                                    <?php
+                                        for( $i = 0; $i < count($array_states); $i++)
+                                            echo '<option>'.$array_states[$i].'</option>';
+                                    ?>
                                 </select>
                                 <div class="select_arrow right_5">
                                 </div>
@@ -225,13 +255,13 @@
                         </div>
                         <div class="form-group">
                             <div class="label-dialog-content">Phone</div>
-                            <input class="text-dialog-content" type="text" name="phone" id="phone"/>
+                            <input class="text-dialog-content" type="text" name="phone" id="phone" required/>
                         </div>
                         
                         <div class="container-question">
                             <p class="text-question">
                                 By clicking the "Get Quotes Now" button, I represent that I am 18+ years of age. By clicking the "Get Quotes Now" button, I give express consent by my electronic signature to receive marketing communications regarding insurance products and services from <span style="color: #0d89c9;">HealthScout.com</span>, Partner 1 LLC and their <span style="color: #0d89c9;">marketing partners</span> via automated telephone dialing system and/or pre-recorded recurring calls, text messages/picture text messages, and/or emails at the phone number and/or email provided above, including wireless numbers, if applicable, even if previously registered on the Do Not Call Registry. I understand that my telephone company may impose charges on me for these contacts. I understand that my consent is not required to buy any of these business's products or services and it can be revoked at any time. For SMS message campaigns: Text STOP to (888) 123-4567 stop and HELP for help. <span style="font-weight: bold;">Msg &amp; data or carrier rates may apply.</span> Terms & Conditions/privacy policy apply.
-                                <br></br>
+                                <br>
                                 I understand that consent is not a condition to receive quotes and/or purchase. To receive quotes without providing consent, please call <span style="color: #0d89c9;">HealthScout.com</span> at <span style="color: #0d89c9;">888-123-4567</span> . Carrier data rates may apply.
                             </p>
                         </div>
