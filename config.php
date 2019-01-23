@@ -1,13 +1,15 @@
 <?php
     $servername = "localhost";
     $username = "root";
-    $password = "rootroot";
+    $password = "";
+    /*$username = "thehealthscout_user";
+    $password = "usBHjk9LTNsj";*/
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password, '', 8889);
+    $conn = new mysqli($servername, $username, $password, '');
     // Check connection
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("Connection to root failed: " . $conn->connect_error);
     }
 
     // Create database

@@ -23,8 +23,9 @@
         $ipaddr = $_SERVER['REMOTE_ADDR'];
 
         $servername = "localhost";
-        $username = "root";
-        $password = "rootroot";
+        $username = "thehealthscout_user";
+        $password = "usBHjk9LTNsj";
+        $database = "thehealthscout_dbHealth";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password);
@@ -35,14 +36,14 @@
         }
 
         // Create database
-        $sql = "CREATE DATABASE dbHealth";
+        $sql = "CREATE DATABASE " . $database;
         if ($conn->query($sql) === TRUE) {
-//            echo "Database created successfully";
+            //echo "Database created successfully";
         } else {
-//            echo "Error creating database: " . $conn->error;
+            //echo "Error creating database: " . $conn->error;
         }
 
-        $conn->select_db("dbHealth");
+        $conn->select_db($database);
 
         $query = "SELECT ID FROM USERS";
         $result = $conn->query($query);
